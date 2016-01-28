@@ -2,16 +2,133 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<!--Bootstrap and Jquery library-->
+		<!--Bootstrap and Jquery library-->		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+
+		<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
 
-		<script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-		<script src="js/script.js" type="text/javascript"></script> 
+
+
 	</head>
 
 	<body>
-		<p>Hello</p>
+		<nav class="navbar navbar-fixed-top">
+			<div class="container">
+				<a class="navbar-brand" href="#">Nowuno</a>
+
+				<ul class="nav nav-pills pull-right">
+					<li><a href="#" id="settings">Settings</a></li>
+					<li><a href="#" id="search">Search</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#">Top</a><li>
+			<li><a href="#">Trending</a><li>
+			<li><a href="#">New</a></li>
+		</ul>
+
+		<div class="container">
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="search-by">Search by
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="#">Today</a></li>
+						<li><a href="#">Week</a></li>
+						<li><a href="#">Month</a></li>
+					</ul>
+			</div>
+		</div>
+
+
+		<div class="container">
+			<div class="cards">
+				<table width="100%">
+					<tr>
+						<td width="25%">
+							<img src="images/chipmunk.jpg" class="img-thumbnail" style="display:block">
+
+						</td>
+
+						<td width="5%">
+						</td>
+
+						<td width="40%">
+							<p>The story begins with Dave attempting to write music in his leaky house. Faced with a deadline to keep his job and house, his worries multiple once a "loving mother" drops the boys off on Dave's doorstep as a result of a nut shortage. After he gladly takes them in, his evil landlord finds out, threatening him to get rid of the boys. When Dave forgets his brunch date with Julie, he leaves the boys alone. The three decide to write a hit song for Dave and send it to a radio station. Later, the boys mistakenly ruin Dave's brunch date and are kidnapped by the landlord.</p>
+
+						</td>
+
+						<td width="5%">
+						</td>
+
+						<td width="25%">
+							<p>18 people knew about this</p>
+							<p>5 people did not know</p>
+
+						</td>
+					</tr>
+				</table>
+
+				<table width="100%">
+					<tr>
+						<td width="25%">
+							<img src="images/chipmunk.jpg" class="img-thumbnail" style="display:block">
+
+						</td>
+
+						<td width="5%">
+						</td>
+
+						<td width="40%">
+							<p>The story begins with Dave attempting to write music in his leaky house. Faced with a deadline to keep his job and house, his worries multiple once a "loving mother" drops the boys off on Dave's doorstep as a result of a nut shortage. After he gladly takes them in, his evil landlord finds out, threatening him to get rid of the boys. When Dave forgets his brunch date with Julie, he leaves the boys alone. The three decide to write a hit song for Dave and send it to a radio station. Later, the boys mistakenly ruin Dave's brunch date and are kidnapped by the landlord.</p>
+
+						</td>
+
+						<td width="5%">
+						</td>
+
+						<td width="25%">
+							<p>18 people knew about this</p>
+							<p>5 people did not know</p>
+
+						</td>
+					</tr>
+				</table>
+
+				<table width="100%">
+					<tr>
+						<td width="25%">
+							<img src="images/chipmunk.jpg" class="img-thumbnail" style="display:block">
+
+						</td>
+
+						<td width="5%">
+						</td>
+
+						<td width="40%">
+							<p>The story begins with Dave attempting to write music in his leaky house. Faced with a deadline to keep his job and house, his worries multiple once a "loving mother" drops the boys off on Dave's doorstep as a result of a nut shortage. After he gladly takes them in, his evil landlord finds out, threatening him to get rid of the boys. When Dave forgets his brunch date with Julie, he leaves the boys alone. The three decide to write a hit song for Dave and send it to a radio station. Later, the boys mistakenly ruin Dave's brunch date and are kidnapped by the landlord.</p>
+
+						</td>
+
+						<td width="5%">
+						</td>
+
+						<td width="25%">
+							<p>18 people knew about this</p>
+							<p>5 people did not know</p>
+
+						</td>
+					</tr>
+				</table>
+
+				<button class="post">Post</button>
+
+			</div>
+		</div>
 	</body>
 </html>
