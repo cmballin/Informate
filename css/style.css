@@ -33,10 +33,39 @@ body {
 #search-by {
 }
 
+
+/************************************************
+                  Nav bar buttons
+*************************************************/
+
+#home {
+	color: #ffffff;
+	padding-top: 15px;
+}
+
+#home:hover {
+	background-color: transparent;
+	color: black;	
+}
+
 #settings {
 	color: #ffffff;
+	padding-top: 15px;
+}
+
+#settings:hover {
+	background-color: transparent;
+	color: black;
 }
 
 #search {
 	color: #ffffff;
+	padding-top: 15px;
 }
+
+#search:hover {
+	background-color: transparent;
+	color: black;
+}
+
+
