@@ -10,6 +10,13 @@
 		<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+			    $(".clickable-row").click(function() {
+			        window.document.location = $(this).data("href");
+			    });
+			});
+		</script>
 	</head>
 
 	<body>
@@ -18,7 +25,7 @@
 				<a class="navbar-brand" href="#">Nowuno</a>
 
 				<ul class="nav nav-pills pull-right">
-					<li><a href="#" id="home">Home</a></li>
+					<li class="active"><a href="#" id="home">Home</a></li>
 					<li><a href="settings.html" id="settings">Settings</a></li>
 					<li><a href="#" id="search">Search</a></li>
 				</ul>
@@ -47,7 +54,7 @@
 		<div class="container">
 			<div class="cards">
 				<table width="100%">
-					<tr>
+					<tr class="clickable-row" data-href="post.html">
 						<td width="25%">
 							<img src="images/chipmunk.jpg" class="img-thumbnail" style="display:block">
 
@@ -74,7 +81,7 @@
 				</table>
 
 				<table width="100%">
-					<tr>
+					<tr class="clickable-row" data-href="post.html">
 						<td width="25%">
 							<img src="images/chipmunk.jpg" class="img-thumbnail" style="display:block">
 
@@ -101,7 +108,7 @@
 				</table>
 
 				<table width="100%">
-					<tr>
+					<tr class="clickable-row" data-href="post.html">
 						<td width="25%">
 							<img src="images/chipmunk.jpg" class="img-thumbnail" style="display:block">
 
@@ -127,7 +134,7 @@
 					</tr>
 				</table>
 
-				<button class="post">Post</button>
+				<a href="newpost.html" class="post btn btn-primary" role="button">Post</a>
 
 			</div>
 		</div>
