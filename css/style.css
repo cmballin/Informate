@@ -71,4 +71,20 @@ body {
 	color: black;
 }
 
+/************************************************
+                    Settings
+*************************************************/
+#user-profile {
+	margin-top: 100px;
+	margin-right: 350px;
+	margin-left: 100px;
+	height: 50px;
+	width: 300px;
+}
 
+#logout {
+	margin-top: 100px;
+	margin-right: 75px;
+	height: 50px;
+	width: 300px;
+}
