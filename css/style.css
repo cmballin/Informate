@@ -61,6 +61,16 @@ body {
 	color: black;
 }
 
+#analytics {
+	color: #ffffff;
+	padding-top: 15px;
+}
+
+#analytics:hover {
+	background-color: transparent;
+	color: black;
+}
+
 #search {
 	color: #ffffff;
 	padding-top: 15px;
