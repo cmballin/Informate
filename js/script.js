@@ -3,4 +3,8 @@ $(document).ready(function() {
 	$('#user-profile').click(function() {
 		window.open("userprofile.html")
 	});
+
+	$(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+    });
 }

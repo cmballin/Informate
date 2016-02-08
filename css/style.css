@@ -5,7 +5,7 @@ body {
 .navbar {
 	background-color: #536872;
 }
-
+ 
 .navbar-brand {
 	color: #ffffff;
 }
@@ -40,6 +40,16 @@ body {
 /************************************************
                   Nav bar buttons
 *************************************************/
+#back-button {
+	padding-right: 200px;
+	border: solid black;
+}
+
+#back-button-image {
+	height: 50px;
+	float: left;
+	margin-right: 30px;
+}
 
 #home {
 	color: #ffffff;
@@ -98,3 +108,95 @@ body {
 	height: 50px;
 	width: 300px;
 }
+
+.settings-buttons {
+	margin-top: 30px;
+	display: block;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+#block {
+	display: block;
+	margin-top: 70px;
+	height: 30px;
+	width: 100%;
+	font-size: 24px;
+}
+
+
+/************************************************
+                Edit user profile
+*************************************************/
+#userphoto {
+	display: block;
+	height: 300px;
+	width: 300px;
+	margin-top: 70px;
+	border-radius: 60%;
+}
+
+.username {
+	display: block;
+	width: 100%;
+	padding-top: 30px;
+	margin: 0 auto;
+}
+
+#name {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+        width: 100%;
+        height: 100%;
+      }
+
+      .slideout-menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+        width: 256px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        display: none;
+      }
+
+      .slideout-panel {
+        position:relative;
+        z-index: 1;
+        will-change: transform;
+      }
+
+      .slideout-open,
+      .slideout-open body,
+      .slideout-open .slideout-panel {
+        overflow: hidden;
+      }
+
+      .slideout-open .slideout-menu {
+        display: block;
+      }

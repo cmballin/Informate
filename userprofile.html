@@ -1,14 +1,12 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<meta charset="utf-8"/>
-		<!--Bootstrap and Jquery library-->		
+		<meta charset="utf-8"/>	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="js/script.js" type="text/javascript"></script>
 
 
-		<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
@@ -16,19 +14,28 @@
 	<body>
 		<nav class="navbar navbar-fixed-top">
 			<div class="container">
+				<!--<a href="javascript:history.back()" id="back-button"><img src="images/back-button.png" id="back-button-image"></a>-->
 				<a class="navbar-brand" href="index.html">Nowuno</a>
 
 				<ul class="nav nav-pills pull-right">
-					<li><a href="search.html" id="search">Search</a></li>
+					<li>
+						<a href="search.html" id="search"><span class="glyphicon glyphicon-search"></span> Search</a>
+					</li>
 					<li><a href="analytics.html" id="analytics">Analytics</a></li>
-					<li><a href="settings.html" id="settings">Settings</a></li>
+					<li class="active"><a href="#" id="settings">Settings</a></li>
 				</ul>
 			</div>
 		</nav>
 
-		<div class="picture">
+		<div class="userphoto"
 			<div class="container">
-				<img src="https://unsplash.it/800/450/?random">
+				<img src="images/giraffe.jpg" id="userphoto">
+			</div>
+		</div>
+
+		<div class="username">
+			<div class="container">
+				<p id="name">Name here</p>
 			</div>
 		</div>
 
