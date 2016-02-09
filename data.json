@@ -1,34 +1,31 @@
 {
-	"friends": [
+	"posts": [
 		{
-			"name": "Doug Engelbart",
-			"description": "Has awesome pet mice",
-			"imageURL": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Douglas_Engelbart_in_2008.jpg/972px-Douglas_Engelbart_in_2008.jpg"			
+			"title": "Screenshot shortcut",
+			"description": "By pressing Command + Shift + 4, you can crop out a specific screen and screenshot it that section.",
+			"imageURL": "http://www.guidebookgallery.org/pics/gui/desktop/empty/macosx102.png"			
 		},
 		{
-			"name": "Ivan Sutherland",
-			"description": "Great at sketching",
-			"imageURL": "http://upload.wikimedia.org/wikipedia/commons/5/5c/Ivan_Sutherland_at_CHM.jpg"			
+			"title": "Toothpick stand",
+			"description": "By breaking off the end of the toothpick, you can put the toothpick on it to avoid touching the dirty table.",
+			"imageURL": "https://fueledbydietcoke.files.wordpress.com/2012/04/objectified_toothpick.jpg"			
 		},
 		{
-			"name": "Lucy Suchman",
-			"description": "Loves Trukese navigators",
-			"imageURL": "http://upload.wikimedia.org/wikipedia/commons/d/df/Lucy_Suchman.jpeg"			
+			"title": "Bleach is toxic when consumed",
+			"description": "Two people have died last year from consuming bleach.",
+			"imageURL": "http://www.slate.com/content/dam/slate/archive/2009/04/1_123125_122945_2207841_2215352_090421_gl_bleachtn.jpg.CROP.original-original.jpg"			
 		},
 		{
-			"name": "Vannevar Bush",
-			"description": "Has stellar associative memory",
-			"imageURL": "http://upload.wikimedia.org/wikipedia/commons/e/ea/Vannevar_Bush_portrait.jpg"			
-		},
+			"title": "Toothpaste gets rid of stains",
+			"description": "If you get a food stain on your shirt, you can rub toothpaste and make it disappear.",
+			"imageURL": "https://9f713baab175865ec8fd-a244153ed31b2286a7b17497bbc33e0e.ssl.cf1.rackcdn.com/purex-life/toothpaste-400x400.jpg"			
+		}
+	],
+
+	"profile": [
 		{
-			"name": "Grace Hopper",
-			"description": "Only friend with a Navy ship named after them",
-			"imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/55/Grace_Hopper.jpg"
-		},
-		{
-			"name": "Allen Newell",
-			"description": "Really into psychology",
-			"imageURL": "http://amturing.acm.org/images/lg_aw/3167755.jpg"
+			"about": "I like to eat salads",
+			"picture": "http://www.giraffeworlds.com/wp-content/uploads/Baringo-giraffe_624.jpg"
 		}
 	]
 }
