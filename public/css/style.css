@@ -60,7 +60,7 @@ hr {
 	/*background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("images/chipmunk.jpg");*/
 	background: url("../images/background.jpg");
 	background-size: cover;
-	height: 630px;
+	height: 650px;
 }
 
 .header {
@@ -72,6 +72,27 @@ hr {
 	display: block;
 	margin: 0 auto;
 	width: 50%;
+	padding: 7px 10px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid #abcabc;
+}
+
+.jumbotron h1, h3 {
+	text-align: center;
+}
+
+/* Needs to fix the width of buttons */
+#login-button {
+	display: inline-block;
+	margin: 0 auto;
+	margin-left: 120px;
+}
+
+#signup-button {
+	display: inline-block;
+	margin: 0 auto;
 }
 
 /************************************************
@@ -79,11 +100,15 @@ hr {
 *************************************************/
 h1, h2, h3, h4, h5, p, td, li {
 	font-family: "Open Sans";
-	color: #5c5c5c;
 }
 
 .bigger-110{
 	font-size:110%!important
+}
+
+/* Change color of placeholder text */
+::-webkit-input-placeholder {
+    color: black;
 }
 
 /************************************************

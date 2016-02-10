@@ -7,4 +7,9 @@ $(document).ready(function() {
 	$(".clickable-row").click(function() {
         window.document.location = $(this).data("href");
     });
+
+	//Needs to check if user credentials are verified -- haven't done so here
+    $("#login-button").click(function() {
+    	window.open("../../views/index.handlebars");
+    });
 }

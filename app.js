@@ -43,12 +43,13 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-// Add routes here
-app.get('/', index.view);
+//Route starts here
+//app.get('/', index.view);
+app.get('/', login.view);
 
 //New routes are added here
 app.get('/analytics', analytics.view);
-app.get('/login', login.view);
+//app.get('/login', login.view);
 app.get('/newpost', newpost.view);
 app.get('/post', post.view);
 app.get('/search', search.view);
