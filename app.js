@@ -19,6 +19,7 @@ var search = require('./routes/search');
 var settings = require('./routes/settings');
 var userprofile = require('./routes/userprofile');
 var password = require('./routes/password');
+var aboutus = require('./routes/aboutus');
 
 var app = express();
 
@@ -54,6 +55,7 @@ app.get('/search', search.view);
 app.get('/settings', settings.view);
 app.get('/userprofile', userprofile.view);
 app.get('/password', password.view);
+app.get('/aboutus', aboutus.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

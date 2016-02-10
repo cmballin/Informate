@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!--Bootstrap and Jquery library-->		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+
+		<link rel="stylesheet" href="font-awesome/4.2.0/css/font-awesome.min.css" />
+
+		<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+
+		<script src="assets/js/ace-extra.min.js"></script>
+	</head>
+
+	<body>
+		<!--<nav class="navbar navbar-fixed-top">
+			<div class="container">
+				<a href="javascript:history.back()">Go back</a>
+				<a class="navbar-brand" href="index.html">Nowuno</a>
+
+				<ul class="nav nav-pills pull-right">
+					<li>
+						<a href="search.html" id="search"><span class="glyphicon glyphicon-search"></span> Search</a>
+					</li>
+					<li><a href="analytics.html" id="analytics">Analytics</a></li>
+					<li class="active"><a href="#" id="settings">Settings</a></li>
+				</ul>
+			</div>
+		</nav>-->
+
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		    <div class="container">
+		        <div class="navbar-header">
+		        	<a class="navbar-brand" href="/">Nowuno</a>
+
+		            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hamburger">
+		                <span class="sr-only"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+		        </div>
+
+		        <div class="collapse navbar-collapse" id="hamburger">
+		            <ul class="nav navbar-nav pull-right">
+		                <li class="hamburger-items"><a href="/search">Search</a></li>
+		                <li class="hamburger-items"><a href="/analytics">Analytics</a></li>
+		                <li class="hamburger-items"><a href="/settings">Settings</a></li>
+		            </ul>
+		        </div>
+		    </div>
+		</nav>
+
+		<div class="container-fluid" id="settings-background">
+			<h1 style="text-align: center;">Nowuno</h1>
+
+			<p style="text-align: center;">Nowuno is an application that helps its user learn an existing solution rather than creating a new 'hack' as a solution. Nowuno will gather data and help the user further understand their own particular wealth of useful knowledge</p>
+			
+			<br />
+			<hr />
+			<br />
+
+			<h4 class="blue">
+				<i class="ace-icon fa fa-check bigger-110"></i>
+				Frequently Asked Question
+			</h4>
+
+			<div class="space-8"></div>
+
+			<div id="faq-list-2" class="panel-group accordion-style1 accordion-style2">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a href="#faq-2-1" data-parent="#faq-list-2" data-toggle="collapse" class="accordion-toggle collapsed">
+							<i class="ace-icon fa fa-chevron-right smaller-80" data-icon-hide="ace-icon fa fa-chevron-down align-top" data-icon-show="ace-icon fa fa-chevron-right"></i>&nbsp; What makes Nowuno different?
+						</a>
+					</div>
+
+					<div class="panel-collapse collapse" id="faq-2-1">
+						<div class="panel-body">
+							Nowuno focused on helping people learned about existing solution instead of creating new solution.
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a href="#faq-2-2" data-parent="#faq-list-2" data-toggle="collapse" class="accordion-toggle collapsed">
+							<i class="ace-icon fa fa-chevron-right smaller-80" data-icon-hide="ace-icon fa fa-chevron-down align-top" data-icon-show="ace-icon fa fa-chevron-right"></i>&nbsp; How do I logout?
+						</a>
+					</div>
+
+					<div class="panel-collapse collapse" id="faq-2-2">
+						<div class="panel-body">
+							You can logout by clicking logout button from settings page.
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a href="#faq-2-3" data-parent="#faq-list-2" data-toggle="collapse" class="accordion-toggle collapsed">
+							<i class="ace-icon fa fa-chevron-right middle smaller-80" data-icon-hide="ace-icon fa fa-chevron-down align-top" data-icon-show="ace-icon fa fa-chevron-right"></i>&nbsp; Why Nowuno?
+						</a>
+					</div>
+
+					<div class="panel-collapse collapse" id="faq-2-3">
+						<div class="panel-body">
+							Because we're the best lol
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a href="#faq-2-4" data-parent="#faq-list-2" data-toggle="collapse" class="accordion-toggle collapsed">
+							<i class="ace-icon fa fa-chevron-right smaller-80" data-icon-hide="ace-icon fa fa-chevron-down align-top" data-icon-show="ace-icon fa fa-chevron-right"></i>&nbsp; Question example 4?
+						</a>
+					</div>
+
+					<div class="panel-collapse collapse" id="faq-2-4">
+						<div class="panel-body">
+							Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script> 
+	</body>
+</html>
