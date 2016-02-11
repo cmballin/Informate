@@ -47,7 +47,14 @@ hr {
 	text-decoration: none;
 }
 
-#search-by {
+/* Center the title of the current page */
+.navbar-brand {
+	position: absolute;
+	left: 0;
+	text-align: center;
+	margin: auto;
+	width: 100%;
+	z-index: -1;
 }
 
 /************************************************
