@@ -20,6 +20,7 @@
 
 	<body style="overflow: hidden;">
 		<div class="header">
+			<form class="form-horizontal" role="form" method="get" action="/index">
 			<div class="jumbotron" id="background">
 				<h1>Nowuno</h1>
 				<h3 style="text-align: center;">The app to your solutions</h3>
@@ -29,9 +30,11 @@
 				<input type="password" placeholder="Password" class="login"></input>
 			<br>
 				<!--<button type="button" class="btn btn-primary" id="login-button">Log in</button>-->
-				<a class="btn btn-primary" id="login-button" href="../../views/index.handlebars">Log in</a>
-				<button type="button" class="btn btn-primary" id="signup-button">Sign up</button>
+				<!--<a class="btn btn-primary" id="login-button" href="../../views/index.handlebars">Log in</a>-->
+				<input type="submit" class="btn btn-primary" value="Log in"></input>
+				<input type="submit" class="btn btn-primary" value="Sign up"></input>
 			</div>
+			</form>
 		</div>
 	</body>
 </html>

@@ -44,12 +44,13 @@ if ('development' == app.get('env')) {
 }
 
 //Route starts here
-app.get('/', index.view);
-//app.get('/', login.view);
+//app.get('/', index.view);
+app.get('/', login.view);
 
 //New routes are added here
 app.get('/analytics', analytics.view);
-app.get('/login', login.view);
+//app.get('/login', login.view);
+app.get('/index', index.view);
 app.get('/addpost', addpost.view);
 app.get('/post', post.view);
 app.get('/search', search.view);
