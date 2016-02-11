@@ -9,7 +9,7 @@ $(document).ready(function() {
     });
 
 	//Needs to check if user credentials are verified -- haven't done so here
-    $("#login-button").click(function() {
-    	window.open("../../views/index.handlebars");
-    });
+    /*$("#login-button").click(function() {
+    	window.location("../../views/index.handlebars");
+    });*/
 }

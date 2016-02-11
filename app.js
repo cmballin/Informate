@@ -20,6 +20,7 @@ var settings = require('./routes/settings');
 var userprofile = require('./routes/userprofile');
 var password = require('./routes/password');
 var aboutus = require('./routes/aboutus');
+var newindex = require('./routes/newindex');
 
 var app = express();
 
@@ -44,12 +45,12 @@ if ('development' == app.get('env')) {
 }
 
 //Route starts here
-//app.get('/', index.view);
-app.get('/', login.view);
+app.get('/', index.view);
+//app.get('/', login.view);
 
 //New routes are added here
 app.get('/analytics', analytics.view);
-//app.get('/login', login.view);
+app.get('/login', login.view);
 app.get('/newpost', newpost.view);
 app.get('/post', post.view);
 app.get('/search', search.view);
@@ -57,6 +58,7 @@ app.get('/settings', settings.view);
 app.get('/userprofile', userprofile.view);
 app.get('/password', password.view);
 app.get('/aboutus', aboutus.view);
+app.get('/newindex', newindex.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

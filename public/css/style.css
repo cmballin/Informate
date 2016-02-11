@@ -231,10 +231,31 @@ h1, h2, h3, h4, h5, p, td, li {
 	margin: 0 auto;
 }
 
+
+/* Needs to be fixed for length of line */
+
 #name {
 	display: block;
-	width: 100%;
-	text-align: center;
+	width: 80%;
+	padding-left: 75px; 
+	font-size: 18px;
+	margin: 0 auto;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	border-bottom: 1px solid #a9a9a9;
+}
+
+#about {
+	display: block;
+	width: 80%;
+	padding-left: 75px; 
+	font-size: 18px;
+	margin: 0 auto;	
+	border: none;
+	outline: none;
+	background-color: transparent;
+	border-bottom: 1px solid #a9a9a9;
 }
 
 #nameText {

@@ -45,7 +45,7 @@
 				<h1>New Post</h1>
 			</div>
 		
-			<form class="form-horizontal">
+			<form class="form-horizontal" role="form" method="get" action="/newindex">
 				<div class="form-group">
 				    <label for="newtitle" class="col-sm-1 control-label">Title</label>
 				    <div class="col-sm-11">
@@ -61,7 +61,8 @@
 				<button type="button" class="btn btn-lg btn-default">
 					<span class="glyphicon glyphicon-picture"></span> Add a Photo 
 				</button>
-				<a class="btn btn-default btn-lg" href="/post" role="button">Submit</a>
+				<!--<a class="btn btn-default btn-lg" href="/post" role="button">Submit</a>-->
+		    	<input type="submit" id="submitBtn" class="btn btn-default" value="Submit"></input>
 			</form>
 		</div>
 
