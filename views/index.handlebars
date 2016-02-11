@@ -15,14 +15,6 @@
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
-		<!--<script type="text/javascript">
-			jQuery(document).ready(function($) {
-			    $(".clickable-row").click(function() {
-			        window.document.location = $(this).data("href");
-			    });
-			});
-		</script>-->
-
 	</head>
 
 	<body>
@@ -60,42 +52,14 @@
 				</ul>
 		</div>
 			
-		<div class="container">
+		<div class="posts">
 			{{#each posts}}
-			<div class="row">
+			<div class="container">
 				<a href="#"><h3>{{title}}</h3></a>
 				<img class="img-responsive" src="{{imageURL}}" width="300">
 				<p>{{description}}</p>
 			</div>
 			{{/each}}
-
-			<!--<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-4 cards">
-					<h3>Toothpick stand</h3>
-					<a href="/post">
-						<img src="https://unsplash.it/800/450/?random"class="img-thumbnail img-responsive" style="display:block">	
-					</a>
-					<p>23 people knew about this | 10 people did not know</p>
-					<p>The story begins with Dave attempting to write music in his leaky house. Faced with a deadline to keep his job and house, his worries multiple once a "loving mother" drops the boys off on Dave's doorstep as a result of a nut shortage. After he gladly takes them in, his evil landlord finds out, threatening him to get rid of the boys. When Dave forgets his brunch date with Julie, he leaves the boys alone. The three decide to write a hit song for Dave and send it to a radio station. Later, the boys mistakenly ruin Dave's brunch date and are kidnapped by the landlord.</p>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 cards">
-					<h3>Screenshot shortcut</h3>
-					<a href="/post">
-						<img src="https://unsplash.it/800/450/?random" class="img-thumbnail img-responsive" style="display:block">
-					</a>
-					<p>18 people knew about this | 5 people did not know</p>
-					<p>The story begins with Dave attempting to write music in his leaky house. Faced with a deadline to keep his job and house, his worries multiple once a "loving mother" drops the boys off on Dave's doorstep as a result of a nut shortage. After he gladly takes them in, his evil landlord finds out, threatening him to get rid of the boys. When Dave forgets his brunch date with Julie, he leaves the boys alone. The three decide to write a hit song for Dave and send it to a radio station. Later, the boys mistakenly ruin Dave's brunch date and are kidnapped by the landlord.</p>
-			
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 cards">
-					<h3>Tic tac opening</h3>
-					<a href="/post">
-						<img src="https://unsplash.it/800/450/?random" class="img-thumbnail img-responsive" style="display:block">	
-					</a>
-					<p>30 people knew about this | 16 people did not know</p>
-					<p>The story begins with Dave attempting to write music in his leaky house. Faced with a deadline to keep his job and house, his worries multiple once a "loving mother" drops the boys off on Dave's doorstep as a result of a nut shortage. After he gladly takes them in, his evil landlord finds out, threatening him to get rid of the boys. When Dave forgets his brunch date with Julie, he leaves the boys alone. The three decide to write a hit song for Dave and send it to a radio station. Later, the boys mistakenly ruin Dave's brunch date and are kidnapped by the landlord.</p>
-				</div>
-			</div>-->
 
 			<a href="/newpost" class="post" role="button">Post</a>
 
