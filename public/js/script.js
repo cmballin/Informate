@@ -1,6 +1,8 @@
 $(document).ready(function() {
+	//Hiding error logs until prompted when user commits error
 	$('#password-updated').hide();
 	$('#password-error').hide();
+	$('#fill-fields').hide();
 
 	//Take user to user profile link
 	$('#user-profile').click(function() {
@@ -20,7 +22,6 @@ $(document).ready(function() {
 	});
 
 	//Save button should prop up a confirmation when user saves new password
-	//Do some error checking for the user textfields
 	$('#password-button').click(function() {
 		var current = $('#current-password');
 		var newPass = $('#new-password');
@@ -34,5 +35,50 @@ $(document).ready(function() {
 			$('#password-updated').show();
 			$('#password-error').hide();
 		}
+	});
+
+	//Checks for user field input and change "action" path for login page
+	$('#login-button').click(function(e) {
+		var username = $('#username');
+		var password = $('#password');
+
+		if (username.val().length == 0 || password.val().length == 0) {
+			$('#fill-fields').show();
+			$('#login-form').attr("action", "/");
+			e.preventDefault();
+		}
+
+		else {
+			$('#login-form').attr("action", "/index");
+		}
+	});
+
+	//New user on login page button
+	$('#newuser-button').click(function() {
+		$('#login-form').attr("action", "/signup");
+	})
+
+	//Change "action" path for sign up page
+	$('#signup-button').click(function(e) {
+		var firstname = $('#firstname');
+		var lastname = $('#lastname');
+		var username = $('#username');
+		var password = $('#password');
+
+		if (firstname.val().length == 0 || lastname.val().length == 0 || 
+			username.val().length == 0 || password.val().length == 0) {
+			$('#fill-fields').show();
+			$('#signup-form').attr("action", "/signup");
+			e.preventDefault();
+		}
+
+		else {
+			$('#signup-form').attr("action", "/index");
+		}
+	})
+
+	$('#cancel-button').click(function() {
+		$('#signup-form').attr("action", "/");
 	})
 });
+

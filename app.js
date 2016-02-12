@@ -13,6 +13,7 @@ var index = require('./routes/index');
 //New routes are added here
 var analytics = require('./routes/analytics');
 var login = require('./routes/login');
+var signup = require('./routes/signup');
 var addpost  = require('./routes/addpost');
 var post = require('./routes/post');
 var search = require('./routes/search');
@@ -50,6 +51,7 @@ app.get('/', login.view);
 //New routes are added here
 app.get('/analytics', analytics.view);
 //app.get('/login', login.view);
+app.get('/signup', signup.view);
 app.get('/index', index.view);
 app.get('/addpost', addpost.view);
 app.get('/post', post.view);
