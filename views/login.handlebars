@@ -21,23 +21,36 @@
 	<body style="overflow: hidden;">
 		<div class="header">
 			<!--<form class="form-horizontal" role="form" id="login-form" method="get" action="/index">-->
-			<form class="form-horizontal" role="form" id="login-form" method="get">
-				<div class="jumbotron" id="background">
-					<h1 id="login-title">Nowuno</h1>
-					<h3 style="text-align: center;">The app to your solutions</h3>
+			
+			<div class="jumbotron" id="background">
+				<h1 id="login-title">Nowuno</h1>
+				<h3 style="text-align: center;">The app to your solutions</h3>
 				<br>
-					<h4 style="background-color: #a9a9a9; height: 40px;" id="fill-fields">Please fill out all fields</h4>
 				<br style="line-height: 1050%;">
-					<input type="text" placeholder="Username" class="login" id="username"></input>
-				<br>
-					<input type="password" placeholder="Password" class="login" id="password"></input>
-				<br>
-					<!--<button type="button" class="btn btn-primary" id="login-button">Log in</button>-->
-					<!--<a class="btn btn-primary" id="login-button" href="../../views/index.handlebars">Log in</a>-->
-					<input type="submit" class="btn btn-primary" id="login-button" value="Log in"></input>
-					<input type="submit" class="btn btn-primary" id="newuser-button" value="New user?"></input>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<form class="form-horizontal" role="form" id="login-form" method="get">
+							<div class="form-group">
+								<input type="text" placeholder="Username" class="login" id="username"></input> 
+								<div id="usernamewarning" class="loginwarning" style="color:white; text-align:left;">Username Required</div>
+							</div>
+							<div class="form-group">
+								<input type="password" placeholder="Password" class="login" id="password"></input>
+								<div id="passwordwarning" class="loginwarning" style="color:white; text-align:left;">Password Required</div>
+							</div>
+							<!--<button type="button" class="btn btn-primary" id="login-button">Log in</button>-->
+							<!--<a class="btn btn-primary" id="login-button" href="../../views/index.handlebars">Log in</a>-->
+							<div class="form-group">
+								<input type="submit" class="btn btn-primary" id="login-button" value="Log in"></input>
+							</div>
+							<div class="form-group">
+								<input type="submit" class="btn btn-primary" id="newuser-button" value="New user?"></input>
+							</div>
+						</form>
+					</div>
 				</div>
-			</form>
+			</div>	
 		</div>
 	</body>
 </html>

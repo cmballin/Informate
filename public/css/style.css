@@ -109,6 +109,13 @@ hr {
 	border-bottom: 1px solid #abcabc;*/
 }
 
+.loginwarning {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	padding: 3px 0 0 0;
+}
+
 .jumbotron h1, h3 {
 	text-align: center;
 }
@@ -118,7 +125,6 @@ hr {
 	display: block;
 	margin: 0 auto;
 	width: 50%;
-	margin-bottom: 15px;
 	height: 40px;
 }
 

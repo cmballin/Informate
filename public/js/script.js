@@ -4,6 +4,9 @@ $(document).ready(function() {
 	$('#password-error').hide();
 	$('#fill-fields').hide();
 
+	$('#usernamewarning').hide();
+	$('#passwordwarning').hide();
+
 	//Take user to user profile link
 	$('#user-profile').click(function() {
 		window.open("userprofile.html");
@@ -42,8 +45,13 @@ $(document).ready(function() {
 		var username = $('#username');
 		var password = $('#password');
 
-		if (username.val().length == 0 || password.val().length == 0) {
-			$('#fill-fields').show();
+		if (username.val().length == 0) {
+			$('#usernamewarning').show();
+			$('#login-form').attr("action", "/");
+			e.preventDefault();
+		}
+		if (password.val().length == 0) {
+			$('#passwordwarning').show();
 			$('#login-form').attr("action", "/");
 			e.preventDefault();
 		}
@@ -53,6 +61,23 @@ $(document).ready(function() {
 		}
 	});
 
+	
+	$('#username').on('input', function(e) {
+		var username = $('#username');
+
+		if (username.val().length > 0) {
+			$('#usernamewarning').hide();
+		}
+	});
+	
+	$('#password').on('input', function(e) {
+		var password = $('#password');
+
+		if (password.val().length > 0) {
+			$('#passwordwarning').hide();
+		}
+	});
+	
 	//New user on login page button
 	$('#newuser-button').click(function() {
 		$('#login-form').attr("action", "/signup");
