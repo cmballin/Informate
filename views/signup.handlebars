@@ -20,26 +20,37 @@
 
 	<body style="overflow: hidden;">
 		<div class="header">
-			<form class="form-horizontal" role="form" id="signup-form" method="get">
-				<div class="jumbotron" id="background">
-					<h1 id="login-title">Nowuno</h1>
-					<h3 style="text-align: center;">The app to your solutions</h3>
+			<div class="jumbotron" id="background">
+				<h1 id="login-title">Nowuno</h1>
+				<h3 style="text-align: center; color:white">The app to your solutions</h3>
 				<br>
-					<h4 style="background-color: #a9a9a9; height: 40px;" id="fill-fields">Please fill out all fields</h4>
+				<h4 style="background-color: #a9a9a9; height: 40px;" id="fill-fields">Please fill out all fields</h4>
 				<br style="line-height: 550%;">
-					<input type="text" placeholder="First name" class="login" id="firstname"></input>
-				<br>
-					<input type="text" placeholder="Last name" class="login" id="lastname"></input>
-				<br>
-					<input type="text" placeholder="Username" class="login" id="username"></input>
-				<br>
-					<input type="password" placeholder="Password" class="login" id="password"></input>
-				<br>
-					<input type="submit" class="btn btn-primary" id="signup-button" value="Sign up"></input>
-				<br>
-					<input type="submit" class="btn btn-primary" id="cancel-button" value="Cancel"></input>
-				</div>
-			</form>
+				<form class="form-horizontal" role="form" id="signup-form" method="get">
+					<div class="form-group">
+						<input type="text" placeholder="First name" class="login" id="firstname"></input>
+						<div id="firstnamewarning" class="loginwarning" style="color:white; text-align:left;">First Name Required</div>
+					</div>
+					<div class="form-group">
+						<input type="text" placeholder="Last name" class="login" id="lastname"></input>
+						<div id="lastnamewarning" class="loginwarning" style="color:white; text-align:left;">Last Name Required</div>
+					</div>
+					<div class="form-group">
+						<input type="text" placeholder="Username" class="login" id="username"></input>
+						<div id="usernamewarning" class="loginwarning" style="color:white; text-align:left;">Username Required</div>
+					</div>
+					<div class="form-group">
+						<input type="password" placeholder="Password" class="login" id="password"></input>
+						<div id="passwordwarning" class="loginwarning" style="color:white; text-align:left;">Password Required</div>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" id="signup-button" value="Sign up"></input>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" id="cancel-button" value="Cancel"></input>
+					</div>
+				</form>
+			</div>
 		</div>
 	</body>
 </html>

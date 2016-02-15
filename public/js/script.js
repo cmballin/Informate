@@ -6,6 +6,8 @@ $(document).ready(function() {
 
 	$('#usernamewarning').hide();
 	$('#passwordwarning').hide();
+	$('#firstnamewarning').hide();
+	$('#lastnamewarning').hide();
 
 	//Take user to user profile link
 	$('#user-profile').click(function() {
@@ -69,6 +71,22 @@ $(document).ready(function() {
 			$('#usernamewarning').hide();
 		}
 	});
+
+	$('#firstname').on('input', function(e) {
+		var username = $('#firstname');
+
+		if (username.val().length > 0) {
+			$('#firstnamewarning').hide();
+		}
+	});
+
+	$('#lastname').on('input', function(e) {
+		var username = $('#lastname');
+
+		if (username.val().length > 0) {
+			$('#lastnamewarning').hide();
+		}
+	});
 	
 	$('#password').on('input', function(e) {
 		var password = $('#password');
@@ -90,13 +108,27 @@ $(document).ready(function() {
 		var username = $('#username');
 		var password = $('#password');
 
-		if (firstname.val().length == 0 || lastname.val().length == 0 || 
-			username.val().length == 0 || password.val().length == 0) {
-			$('#fill-fields').show();
+		if (firstname.val().length == 0) {
+			$('#firstnamewarning').show();
+			$('#signup-form').attr("action", "/signup");
+			e.preventDefault();
+		} 
+		if (lastname.val().length == 0) {
+			$('#lastnamewarning').show();
 			$('#signup-form').attr("action", "/signup");
 			e.preventDefault();
 		}
 
+		if (username.val().length == 0) {
+			$('#usernamewarning').show();
+			$('#signup-form').attr("action", "/signup");
+			e.preventDefault();
+		}
+		if (password.val().length == 0) {
+			$('#passwordwarning').show();
+			$('#signup-form').attr("action", "/signup");
+			e.preventDefault();
+		}
 		else {
 			$('#signup-form').attr("action", "/index");
 		}
