@@ -226,6 +226,14 @@ h1, h2, h3, h4, h5, p, td, li {
 	color: black;
 }
 
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
 /************************************************
                     Settings
 *************************************************/
