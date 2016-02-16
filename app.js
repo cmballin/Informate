@@ -54,6 +54,7 @@ app.get('/analytics', analytics.view);
 app.get('/signup', signup.view);
 app.get('/index', index.view);
 app.get('/addpost', addpost.view);
+app.get('/addnewpost', addpost.addnewpost);
 app.get('/post', post.view);
 app.get('/search', search.view);
 app.get('/settings', settings.view);

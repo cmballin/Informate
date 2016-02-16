@@ -4,8 +4,8 @@ var data = require('../data.json');
 exports.view = function(req, res){
 	//console.log(data);
 	res.render('index', data);
+	/*
 	var fulldesc = req.query.newcontent;
-	//self.teaser = "fjdksafjs";
 	this.teaser = fulldesc;
 	this.postnumber = data.posts.length;
 
@@ -20,4 +20,5 @@ exports.view = function(req, res){
 	}
 
 	data["posts"].push(newPost);
+	*/
 };
