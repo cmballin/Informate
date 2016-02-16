@@ -23,6 +23,10 @@ $(document).ready(function() {
         window.document.location = $(this).data("href");
     });
 
+
+/********************************************************************
+                         Change password
+********************************************************************/
 	$('#edit-button').click(function() {
 		var text = $('#edit-button').text();
 		$('#edit-button').html(
@@ -61,6 +65,10 @@ $(document).ready(function() {
 			$('#password-error').hide();
 		}
 	});
+
+/*******************************************************************
+                               Login
+*******************************************************************/
 
 	//Checks for user field input and change "action" path for login page
 	$('#login-button').click(function(e) {
@@ -116,6 +124,10 @@ $(document).ready(function() {
 		}
 	});
 	
+
+/****************************************************************
+                             Signup
+*****************************************************************/
 	//New user on login page button
 	$('#newuser-button').click(function() {
 		$('#login-form').attr("action", "/signup");
@@ -154,11 +166,15 @@ $(document).ready(function() {
 		}
 	})
 
+
 	$('#cancel-button').click(function() {
 		$('#signup-form').attr("action", "/");
 	})
 
 
+/************************************************************
+                         Add post
+*************************************************************/
 	//Add photo functionality in addpost
 	$('#addphoto').click(function() {
 		$('#upload').click();
@@ -180,5 +196,27 @@ $(document).ready(function() {
 			e.preventDefault();
 		}
 	})
+
+/**************************************************************
+                    Ajax for username/password
+***************************************************************/
+	$('#signup-form').submit(function() {
+		var dataform = $('#signup-form').serialize();
+
+		$.ajax({
+			type: "GET",
+			cache: false,
+			data: dataform,
+			url: "/data.json",
+			success: function(data) {
+				console.log("Data is loaded!!");
+			}
+		});
+		return true;
+	});
+
+
+
+
 });
 
