@@ -5,7 +5,7 @@ exports.view = function(req, res) { 
 }
 
 exports.addprofile = function(req, res) {
-	res.render("index", data);
+	res.render('index', data);
 
 	var credentials = {
 		"firstname": req.query.firstname,

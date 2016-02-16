@@ -8,6 +8,8 @@ $(document).ready(function() {
 	$('#passwordwarning').hide();
 	$('#firstnamewarning').hide();
 	$('#lastnamewarning').hide();
+	$('#contentwarning').hide();
+	$('#titlewarning').hide();
 
 	//User can't edit name unless they click "Edit" button
 	$('#name').prop('disabled', true);
@@ -154,6 +156,29 @@ $(document).ready(function() {
 
 	$('#cancel-button').click(function() {
 		$('#signup-form').attr("action", "/");
+	})
+
+
+	//Add photo functionality in addpost
+	$('#addphoto').click(function() {
+		$('#upload').click();
+	})
+
+	//Check for empty title and content in New Post
+	$('#submitBtn').click(function(e) {
+		//If empty, tell user to fill out the fields
+		var newcontent = $('#newcontent');
+		var newtitle = $('#newtitle');
+
+		if (!newcontent.val()) {
+			$('#contentwarning').show();
+			e.preventDefault();
+		}
+
+		if (!newtitle.val()) {
+			$('#titlewarning').show();	
+			e.preventDefault();
+		}
 	})
 });
 
