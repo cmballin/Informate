@@ -130,7 +130,7 @@ $(document).ready(function() {
 			e.preventDefault();
 		}
 		else {
-			$('#signup-form').attr("action", "/index");
+			$('#signup-form').attr("action", "/addprofile");
 		}
 	})
 

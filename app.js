@@ -59,6 +59,7 @@ app.get('/post', post.view);
 app.get('/search', search.view);
 app.get('/settings', settings.view);
 app.get('/userprofile', userprofile.view);
+app.get('/addprofile', signup.addprofile);
 app.get('/password', password.view);
 app.get('/aboutus', aboutus.view);
 
