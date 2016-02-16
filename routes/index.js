@@ -7,18 +7,17 @@ exports.view = function(req, res){
 	var fulldesc = req.query.newcontent;
 	//self.teaser = "fjdksafjs";
 	this.teaser = fulldesc;
+	this.postnumber = data.posts.length;
 
 	var newPost = {
 		"title": req.query.newtitle,
 		"teaser": this.teaser,
 		"description": req.query.newcontent,
 		"imageURL": "http://lorempixel.com/400/400/people",
-		"postnumber": req.query.postnumber,
+		"postnumber": this.postnumber,
 		"know": "0",
 		"notknow": "0"
 	}
-
-	console.log(newPost);
 
 	data["posts"].push(newPost);
 };

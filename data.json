@@ -40,7 +40,10 @@
 
 	"profile": [
 		{
-			"name": "Adam Rule",
+			"firstname": "Adam",
+			"lastname": "Rule",
+			"username": "Quantified",
+			"password": "abc123",
 			"about": "Salad",
 			"picture": "http://www.giraffeworlds.com/wp-content/uploads/Baringo-giraffe_624.jpg"
 		}
