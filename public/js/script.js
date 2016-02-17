@@ -178,7 +178,13 @@ $(document).ready(function() {
 	//Add photo functionality in addpost
 	$('#addphoto').click(function() {
 		$('#upload').click();
+
+		var filename = $('#upload').val();
+		alert(filename);
 	})
+
+	//Display photo on page
+
 
 	//Check for empty title and content in New Post
 	$('#submitBtn').click(function(e) {
