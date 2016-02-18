@@ -13,14 +13,13 @@ exports.addprofile = function(req, res) {
 		"password": req.body.password
 	}
 
-	//console.log(credentials);
-
 	data["profile"].push(credentials);
 
+	//Push the same credentials into the user logged in section of database
 	data["userlogedin"] = [];
 	data["userlogedin"].push(credentials);
 
-	console.log(data["userlogedin"]);
+	//console.log(data["userlogedin"]);
 
 	res.redirect("/index");
 }
