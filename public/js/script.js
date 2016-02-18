@@ -2,6 +2,7 @@ $(document).ready(function() {
 	//Hiding error logs until prompted when user commits error
 	$('#password-updated').hide();
 	$('#password-error').hide();
+	$('#diff-password-error').hide();
 	$('#fill-fields').hide();
 
 	$('#usernamewarning').hide();
@@ -61,11 +62,48 @@ $(document).ready(function() {
 
 		if (current.val().length == 0 || newPass.val().length == 0 || confirm.val().length == 0) {
 			$('#password-error').show();
+			$('#password-updated').hide();
+			$('#diff-password-error').hide();
 		}
-
+		else if(newPass.val() != confirm.val())
+		{
+			$('#diff-password-error').show();
+		}
 		else {
-			$('#password-updated').show();
 			$('#password-error').hide();
+			$('#diff-password-error').hide();
+			validatePassword(current.val(), newPass.val());
+		}
+	});
+
+	$('#current-password').on('input', function(e) {
+		var oldpassword = $('#current-password');
+
+		if (oldpassword.val().length > 0) {
+			$('#password-error').hide();
+			$('#password-updated').hide();
+			$('#diff-password-error').hide();
+
+		}
+	});
+
+	$('#new-password').on('input', function(e) {
+		var newpassword = $('#new-password');
+
+		if (newpassword.val().length > 0) {
+			$('#password-error').hide();
+			$('#password-updated').hide();
+			$('#diff-password-error').hide();
+		}
+	});
+
+	$('#confirm-password').on('input', function(e) {
+		var confirmpassword = $('#confirm-password');
+
+		if (confirmpassword.val().length > 0) {
+			$('#password-error').hide();
+			$('#password-updated').hide();
+			$('#diff-password-error').hide();
 		}
 	});
 
@@ -291,6 +329,34 @@ function validated(result) {
 	else
 	{
 		window.location.href = "/index";
+	}
+}
+
+/*******************************************************************
+                            Password
+*******************************************************************/
+function validatePassword(oldpass, newpass)
+{
+	var pass = {
+		oldpass: oldpass,
+		newpass: newpass
+	}
+
+	$.post("/changepassword", pass, passValidated);
+}
+
+function passValidated(result)
+{
+	if(result.success == false)
+	{
+		$('#invalidwarning').show();
+	}
+	else
+	{
+		$('#current-password').val("");
+		$('#new-password').val("");
+		$('#confirm-password').val("");
+		$('#password-updated').show();
 	}
 }
 

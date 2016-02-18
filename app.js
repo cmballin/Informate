@@ -64,6 +64,7 @@ app.get('/settings', settings.view);
 app.get('/userprofile', userprofile.view);
 app.post('/addprofile', signup.addprofile);
 app.get('/password', password.view);
+app.post('/changepassword', password.changepassword);
 app.get('/aboutus', aboutus.view);
 
 http.createServer(app).listen(app.get('port'), function(){
