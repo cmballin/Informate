@@ -36,18 +36,19 @@
 						<div id="lastnamewarning" class="loginwarning" style="color:white; text-align:left;">Last Name Required</div>
 					</div>
 					<div class="form-group">
-						<input type="text" placeholder="Username" class="login" id="username" name="username"></input>
+						<input type="text" value={{username}} placeholder="Username" class="login" id="username" name="username"></input>
 						<div id="usernamewarning" class="loginwarning" style="color:white; text-align:left;">Username Required</div>
 					</div>
 					<div class="form-group">
-						<input type="password" placeholder="Password" class="login" id="password" name="password"></input>
+						<input type="password" value={{password}} placeholder="Password" class="login" id="password" name="password"></input>
 						<div id="passwordwarning" class="loginwarning" style="color:white; text-align:left;">Password Required</div>
+						<div id="invalidwarning" class="loginwarning" style="color:white; text-align:left;">Username Already Exist</div>
 					</div>
 					<div class="form-group">
 						<input type="submit" class="btn btn-primary" id="signup-button" value="Sign up"></input>
 					</div>
 					<div class="form-group">
-						<input type="submit" class="btn btn-primary" id="cancel-button" value="Cancel"></input>
+						<input type="submit" class="btn btn-primary" id="cancel-button" value="Cancel" onclick="history.back();"></input>
 					</div>
 				</form>
 			</div>

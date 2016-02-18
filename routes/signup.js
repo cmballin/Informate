@@ -1,27 +1,37 @@
 var data = require("../data.json");
 
 exports.view = function(req, res) {    
-	res.render('signup', data);
+	res.render('signup', req.query);
 }
 
 exports.addprofile = function(req, res) {
-	var credentials = {
-		"firstname": req.body.firstname,
-		"lastname": req.body.lastname,
-		"username": req.body.username,
-		"userid": data.profile.length,
-		"password": req.body.password
+	var success = true;
+	for(var i = 0; i < data["profile"].length; i++)
+	{
+		if(req.body.username == data.profile[i].username)
+		{
+			success = false;
+		}
 	}
 
-	//console.log(credentials);
+	if(success == true)
+	{
+		var credentials = {
+			"firstname": req.body.firstname,
+			"lastname": req.body.lastname,
+			"username": req.body.username,
+			"userid": data.profile.length,
+			"password": req.body.password
+		}
 
-	data["profile"].push(credentials);
+		//console.log(credentials);
 
-	data["userlogedin"] = [];
-	data["userlogedin"].push(credentials);
+		data["profile"].push(credentials);
 
-	console.log(data["userlogedin"]);
+		data["userlogedin"] = [];
+		data["userlogedin"].push(credentials);
+	}
 
-	res.redirect("/index");
+	res.json({success: success});
 }
  
