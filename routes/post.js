@@ -15,3 +15,21 @@ exports.view = function(req, res) { 
 
 	//data["friends"].push(newFriend);
  }
+
+exports.updateknowvalue = function(req, res) {    
+	// Your code goes here
+	var postnumber = req.body.postnumber;
+
+	data.posts[postnumber].know++;
+
+	res.render('post', postnumber);
+ }
+
+exports.updatenotknowvalue = function(req, res) {    
+	// Your code goes here
+	var postnumber = req.body.postnumber;
+
+	data.posts[postnumber].notknow++;
+
+	res.render('post', postnumber);
+ }

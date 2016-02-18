@@ -172,7 +172,6 @@ $(document).ready(function() {
 		$('#signup-form').attr("action", "/");
 	})
 
-
 /************************************************************
                          Add post
 *************************************************************/
@@ -246,8 +245,51 @@ $(document).ready(function() {
 		return true;
 	});
 
+	/************************************************************
+	                    Individual Posts
+	*************************************************************/
+	$('#knowbutton').click(updateKnowValue);
 
-
-
+	$('#notknowbutton').click(updateNotKnowValue);
 });
 
+/************************************************************
+                    Individual Posts
+*************************************************************/
+
+
+function updateKnowValue (e) {
+	e.preventDefault();
+
+	var postnumber = {
+		postnumber: getParameterByName("postnumber")
+	}
+
+	$.post("/know", postnumber, refreshPage)
+	console.log(postnumber);
+}
+
+function updateNotKnowValue (e) {
+	e.preventDefault();
+
+	var postnumber = {
+		postnumber: getParameterByName("postnumber")
+	}
+
+	$.post("/notknow", postnumber, refreshPage)
+	console.log(postnumber);
+}
+
+function refreshPage(result) {
+	location.reload();
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}

@@ -56,6 +56,8 @@ app.get('/index', index.view);
 app.get('/addpost', addpost.view);
 app.get('/addnewpost', addpost.addnewpost);
 app.get('/post', post.view);
+app.post('/know', post.updateknowvalue);
+app.post('/notknow', post.updatenotknowvalue);
 app.get('/search', search.view);
 app.get('/settings', settings.view);
 app.get('/userprofile', userprofile.view);
