@@ -12,6 +12,7 @@ $(document).ready(function() {
 	$('#contentwarning').hide();
 	$('#titlewarning').hide();
 	$('#invalidwarning').hide();
+	$('#profile-updated').hide();
 
 	$('#uploaded-image').hide();
 
@@ -33,25 +34,38 @@ $(document).ready(function() {
 ********************************************************************/
 	$('#edit-button').click(function() {
 		var text = $('#edit-button').text();
+		var firstname = $('#name').val();
+
 		$('#edit-button').html(
 			//Toggle between Save and Edit
 			text == "Save" ? "Edit" : "Save"
 		);
 
-		/*if ($('#edit-button').text() == 'Edit') {
-			$('#name').prop('disabled', true);
-		}*/
-
 		//User clicks "Save"
-		if ($('#edit-button').text() == 'Edit') {
-			$('#name').prop('disabled', true);
+		if (text == 'Edit') {
+			$('#name').prop('disabled', false);
 		}
 
 		//User clicks "Edit" so they can edit textbox
 		else {
-			$('#name').prop('disabled', false);
+			$('#name').prop('disabled', true);
+			newName(firstname);
 		}
 	});
+
+	//Change new name and update to database
+	function newName(firstname) {
+		var name = {
+			firstname: firstname
+		}
+
+		$.post("/updatename", name, nameFunc);
+	}
+
+	function nameFunc(result) {
+		//Show update success message
+		$('#profile-updated').show();
+	}
 
 
 	//Save button should prop up a confirmation when user saves new password
