@@ -5,14 +5,16 @@ exports.view = function(req, res) { 
  }
 
 exports.login = function(req, res) {
+	//Username and password field that the user is entering in text fields
 	var username = req.body.username;
 	var password = req.body.password;
 
-	console.log(username);
-	console.log(password);
 	var success = false;
+
+	//Iterate through all the users in profile, which is the total number of users
 	for(var i = 0; i < data["profile"].length; i++)
 	{
+		//If the username and password the user entered matches up to the ones in database, login success
 		if(username == data.profile[i].username && password == data.profile[i].password)
 		{
 			data["userlogedin"] = [];
