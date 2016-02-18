@@ -5,18 +5,23 @@ exports.view = function(req, res) { 
 }
 
 exports.addprofile = function(req, res) {
-	res.render('index', data);
-
 	var credentials = {
-		"firstname": req.query.firstname,
-		"lastname": req.query.lastname,
-		"username": req.query.username,
+		"firstname": req.body.firstname,
+		"lastname": req.body.lastname,
+		"username": req.body.username,
 		"userid": data.profile.length,
-		"password": req.query.password
+		"password": req.body.password
 	}
 
 	//console.log(credentials);
 
 	data["profile"].push(credentials);
+
+	data["userlogedin"] = [];
+	data["userlogedin"].push(credentials);
+
+	console.log(data["userlogedin"]);
+
+	res.redirect("/index");
 }
  
