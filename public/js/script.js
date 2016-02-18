@@ -169,7 +169,8 @@ $(document).ready(function() {
 			e.preventDefault();
 		}
 		else {
-			$('#signup-form').attr("action", "/addprofile");
+			e.preventDefault();
+			validateSignUpUser(username.val(), password.val(), firstname.val(), lastname.val());
 		}
 	})
 
@@ -254,6 +255,20 @@ $(document).ready(function() {
 	$('#notknowbutton').click(updateNotKnowValue);
 });
 
+
+/*******************************************************************
+                              Sign Up
+*******************************************************************/
+function validateSignUpUser(username, password, firstname, lastname) {
+	var userinfo = {
+		username: username,
+		password: password,
+		firstname: firstname,
+		lastname: lastname
+	}
+
+	$.post("/addprofile", userinfo, validated);
+}
 
 /*******************************************************************
                                Login
