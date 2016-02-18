@@ -62,6 +62,16 @@ hr {
 	margin-top: 4px;
 }
 
+/************************************************
+                 Spacing
+*************************************************/
+.space-6{
+	max-height:1px;
+	min-height:1px;
+	overflow:hidden;
+	margin:12px 0;
+	margin:6px 0 5px
+}
 
 /************************************************
                  Error messages

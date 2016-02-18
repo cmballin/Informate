@@ -57,9 +57,20 @@
 				{{#each posts}}
 					<div class="row">
 						<div class="col-xs-12">
-							<h3>{{title}}</h3>
+							<h2>{{title}}</h2>
 							<a href="/post?postnumber={{postnumber}}" id="indipost"><img class="img-responsive center-block" src="{{imageURL}}" width="300"></a>
+							<div class="space-6"></div>
+							<p>
+								<span class="glyphicon glyphicon-thumbs-up"></span>
+								{{know}} people knew about this
+							</p>
+							<p>
+								<span class="glyphicon glyphicon-thumbs-down"></span>
+								{{notknow}} people did not know
+							</p>
 							<p>{{teaser}}</p>
+							<div class="space-6"></div>
+							<hr /><hr />
 						</div>
 					</div>
 				{{/each}}
