@@ -8,15 +8,14 @@ exports.view = function(req, res) { 
 
 exports.addnewpost = function(req, res){
 	//console.log(data);
-	res.render('index', data);
-	var fulldesc = req.query.newcontent;
+	var fulldesc = req.body.newcontent;
 
 	//Grabs the first sentence as a teaser for posts
 	var teaser = fulldesc.split('.')[0];
 	this.postnumber = data.posts.length;
 
 	var newPost = {
-		"title": req.query.newtitle,
+		"title": req.body.newtitle,
 		"teaser": teaser,
 		"description": fulldesc,
 		"imageURL": "http://lorempixel.com/400/400/people",
@@ -26,4 +25,6 @@ exports.addnewpost = function(req, res){
 	}
 
 	data["posts"].push(newPost);
+
+	res.redirect("/index");
 };
