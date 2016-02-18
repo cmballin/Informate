@@ -166,7 +166,6 @@ $(document).ready(function() {
 		}
 	})
 
-
 	$('#cancel-button').click(function() {
 		$('#signup-form').attr("action", "/");
 	})
@@ -176,14 +175,37 @@ $(document).ready(function() {
                          Add post
 *************************************************************/
 	//Add photo functionality in addpost
-	$('#addphoto').click(function() {
+	/*$('#addphoto').click(function() {
 		$('#upload').click();
 
-		var filename = $('#upload').val();
-		alert(filename);
+		var filename = ($('#upload').val(), function() {
+			alert(filename);
+		});
+	})*/
+
+	$('#addphoto').click(function() {
+		$('#upload').click();
 	})
 
-	//Display photo on page
+	function displayImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#uploaded-image')
+                    .attr('src', e.target.result)
+                    .width(310)
+                    .height(250);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+   	//Display photo on page
+    $('#upload').change(function() {
+    	displayImage(this);
+    });
 
 
 	//Check for empty title and content in New Post

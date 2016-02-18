@@ -241,6 +241,10 @@ h1, h2, h3, h4, h5, p, td, li {
 	visibility: hidden;
 }
 
+#uploaded-image {
+	padding: 25px 0 25px 0;
+}
+
 .postwarning {
 	margin-top: 15px;
 	padding-left: 5px;
