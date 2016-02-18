@@ -11,6 +11,8 @@ $(document).ready(function() {
 	$('#contentwarning').hide();
 	$('#titlewarning').hide();
 
+	$('#uploaded-image').hide();
+
 	//User can't edit name unless they click "Edit" button
 	$('#name').prop('disabled', true);
 
@@ -204,6 +206,7 @@ $(document).ready(function() {
 
    	//Display photo on page
     $('#upload').change(function() {
+    	$('#uploaded-image').show();
     	displayImage(this);
     });
 
