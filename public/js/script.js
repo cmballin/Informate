@@ -10,6 +10,7 @@ $(document).ready(function() {
 	$('#lastnamewarning').hide();
 	$('#contentwarning').hide();
 	$('#titlewarning').hide();
+	$('#invalidwarning').hide();
 
 	$('#uploaded-image').hide();
 
@@ -89,7 +90,9 @@ $(document).ready(function() {
 		}
 
 		else {
-			$('#login-form').attr("action", "/index");
+			e.preventDefault();
+			//$('#login-form').attr("action", "/index");
+			validateUser(username.val(), password.val());
 		}
 	});
 
@@ -99,6 +102,7 @@ $(document).ready(function() {
 
 		if (username.val().length > 0) {
 			$('#usernamewarning').hide();
+			$('#invalidwarning').hide();
 		}
 	});
 
@@ -123,6 +127,7 @@ $(document).ready(function() {
 
 		if (password.val().length > 0) {
 			$('#passwordwarning').hide();
+			$('#invalidwarning').hide();
 		}
 	});
 	
@@ -253,6 +258,31 @@ $(document).ready(function() {
 	$('#notknowbutton').click(updateNotKnowValue);
 });
 
+
+/*******************************************************************
+                               Login
+*******************************************************************/
+
+function validateUser(username, password) {
+	var userinfo = {
+		username: username,
+		password: password
+	}
+
+	$.post("/login", userinfo, validated);
+}
+
+function validated(result) {
+	if(result.success == false)
+	{
+		$('#invalidwarning').show();
+	}
+	else
+	{
+		window.location.href = "/index";
+	}
+}
+
 /************************************************************
                     Individual Posts
 *************************************************************/
@@ -265,7 +295,7 @@ function updateKnowValue (e) {
 		postnumber: getParameterByName("postnumber")
 	}
 
-	$.post("/know", postnumber, refreshPage)
+	$.post("/know", postnumber, refreshPage);
 	console.log(postnumber);
 }
 
@@ -276,7 +306,7 @@ function updateNotKnowValue (e) {
 		postnumber: getParameterByName("postnumber")
 	}
 
-	$.post("/notknow", postnumber, refreshPage)
+	$.post("/notknow", postnumber, refreshPage);
 	console.log(postnumber);
 }
 

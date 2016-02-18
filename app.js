@@ -47,6 +47,7 @@ if ('development' == app.get('env')) {
 //Route starts here
 //app.get('/', index.view);
 app.get('/', login.view);
+app.post('/login', login.login);
 
 //New routes are added here
 app.get('/analytics', analytics.view);
