@@ -30,6 +30,8 @@ exports.addprofile = function(req, res) {
 
 		data["userlogedin"] = [];
 		data["userlogedin"].push(credentials);
+
+		console.log(data["userlogedin"]);
 	}
 
 	res.json({success: success});
