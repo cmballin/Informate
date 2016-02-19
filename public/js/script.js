@@ -34,7 +34,7 @@ $(document).ready(function() {
 ********************************************************************/
 	$('#edit-button').click(function() {
 		var text = $('#edit-button').text();
-		var firstname = $('#name').val();
+		var username = $('#name').val();
 
 		$('#edit-button').html(
 			//Toggle between Save and Edit
@@ -49,20 +49,20 @@ $(document).ready(function() {
 		//User clicks "Edit" so they can edit textbox
 		else {
 			$('#name').prop('disabled', true);
-			newName(firstname);
+			newName(username);
 		}
 	});
 
 	//Change new name and update to database
-	function newName(firstname) {
+	function newName(username) {
 		var name = {
-			firstname: firstname
+			username: username
 		}
 
-		$.post("/updatename", name, nameFunc);
+		$.post("/updatename", name, nameUpdated);
 	}
 
-	function nameFunc(result) {
+	function nameUpdated(result) {
 		//Show update success message
 		$('#profile-updated').show();
 	}

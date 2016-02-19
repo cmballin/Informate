@@ -6,12 +6,12 @@ exports.view = function(req, res) { 
  }
 
 exports.updatename = function(req, res) {
-	var newName = req.body.firstname;
+	var newName = req.body.username;
 	var userid = data.userlogedin[0].userid;
 
 	//Change the user database to be user input's new name
-	data.userlogedin[0].firstname = newName;
-	data.profile[userid].firstname = newName;
+	data.userlogedin[0].username = newName;
+	data.profile[userid].username = newName;
 
 	var success = true;
 
