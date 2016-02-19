@@ -51,6 +51,7 @@ app.post('/login', login.login);
 
 //New routes are added here
 app.get('/analytics', analytics.view);
+app.get('/getflotdata', analytics.getflotdata);
 //app.get('/login', login.view);
 app.get('/signup', signup.view);
 app.get('/index', index.view);

@@ -7,13 +7,120 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="js/script.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.js"></script>
+		<script src="js/jquery.flot.axislabels.js"></script>
 
 
 		<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+		
+		<style>
+			#placeholder {
+			    width: 300px;
+			    height: 350px;
+			}
+			#graph-container{
+				width: 300px;
+			    height: 350px;
+			}
+		</style>
+		<script type="text/javascript">
+			var currentPerson;
+		
+			
+		
+			var options = {
+				
+				axesLabels: {
+            		show: true
+		        },
+		        
+		        lines: {
+					show: true
+				},
+				
+				points: {
+					show: true
+				},
+		        
+		        xaxes: [{
+		            axisLabel: 'Weeks',
+			        axisLabelFontSizePixels: 12,
+			        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+			        axisLabelPadding: 5
+		        }],
+		        
+		        yaxes: [{
+		            position: 'left',
+		            axisLabel: 'New   ideas   learned',
+		            axisLabelFontSizePixels: 12,
+			        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+			        axisLabelPadding: 5
+		        }, {
+		            position: 'right',
+		            axisLabel: 'bleem'
+		        }]
+				
+			};
+			
+		
+			$(function () {
+    
+			    $('#quant-learn').click(function(){
+			    	plotDataSet(0);
+			    	
+				    $('#suggest-list').hide();
+				  
+				    $('#placeholder').show();
+				   
+			    	$('#graph-title').text("Unique ideas learned");
+			    });
+			    
+			     $('#what-learn').click(function(){
+			     	plotDataSet(1);
+				    
+				    $('#suggest-list').hide();
+				  
+				    $('#placeholder').show();
+				   
+			    	$('#graph-title').text("Categories you learned");
+			    });
+			    
+			    $('#suggest-learn').click(function(){
+				    $('#placeholder').hide();
+				    
+				    $('#suggest-list').show();
+				   
+			    	$('#graph-title').text("Suggestions");
+			    });
+			
+			});
+			
 
+			function getData(result) {
+				currentPerson = result;
+				plotDataSet(0);
+			
+			}	
+			function plotDataSet(index){
+				$.plot($("#placeholder"), [currentPerson.datasets[index]], options);
+			}
+			
+			
+			$(document).ready(function() {
+				//this is the person call this will have to change
+				$.get("/getflotdata?index=0",getData);
+				$('#suggest-list').hide();
+		//      $.plot($("#graph-quant"), [data_quant], options);
+		//	    $.plot($("#graph-what"), [data_what], options);
+		//	    $('#suggest-list').hide();
+		//	    $('#graph-what').hide();
+			});
+		
+		</script>
 	</head>
 
 	<body>
@@ -43,8 +150,33 @@
 
 		<div>
 			<div class="container">
-				<h3>Woah! Look at them awesome analytics!</h3>
-				<img src="http://www.dailyinfographic.com/wp-content/uploads/2014/08/octopus_infographic1.jpg" class="img-responsive">
+				<h3 id="graph-title">Unique ideas learned</h3>
+				<div>
+					<div id="placeholder"></div>
+					<div id="suggest-list">
+						<ul>
+							{{#each suggestions}}
+							<li>{{suggestion}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					
+				</div>
+				<div class="row">
+					
+					<div class="col-md-4">
+						<button type="button" id="quant-learn" class="btn btn-primary btn-lg">How much you learned</button>
+					</div>
+					
+					<div class="col-md-4">
+						<button type="button" id="what-learn" class="btn btn-primary btn-lg">How much your friends learned</button>
+					</div>
+					
+					<div class="col-md-4">
+						<button type="button" id="suggest-learn" class="btn btn-primary btn-lg">Personalized suggestions</button>
+					</div>
+					
+				</div>
 			</div>
 		</div>
 
