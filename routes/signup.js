@@ -21,7 +21,8 @@ exports.addprofile = function(req, res) {
 			"lastname": req.body.lastname,
 			"username": req.body.username,
 			"userid": data.profile.length,
-			"password": req.body.password
+			"password": req.body.password,
+			"userphoto": null //null picture when user signs in
 		}
 
 		//console.log(credentials);

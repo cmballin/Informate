@@ -14,7 +14,7 @@ $(document).ready(function() {
 	$('#invalidwarning').hide();
 	$('#profile-updated').hide();
 
-	$('#uploaded-image').hide();
+	$('#uploadedimage').hide();
 
 	//User can't edit name unless they click "Edit" button
 	$('#name').prop('disabled', true);
@@ -35,6 +35,7 @@ $(document).ready(function() {
 	$('#edit-button').click(function() {
 		var text = $('#edit-button').text();
 		var username = $('#name').val();
+		//var userphoto = $('#userphoto').val(); WILL WORK ON LATER
 
 		$('#edit-button').html(
 			//Toggle between Save and Edit
@@ -50,8 +51,18 @@ $(document).ready(function() {
 		else {
 			$('#name').prop('disabled', true);
 			newName(username);
+			//changePhoto() WILL WORK ON LATER!
 		}
 	});
+
+	//Change new photo and update to database
+	function changePhoto(userphoto) {
+		var photo = {
+			userphoto: userphoto
+		}
+
+		$.post("/updatephoto", photo, nameUpdated);
+	}
 
 	//Change new name and update to database
 	function newName(username) {
@@ -66,7 +77,6 @@ $(document).ready(function() {
 		//Show update success message
 		$('#profile-updated').show();
 	}
-
 
 	//Save button should prop up a confirmation when user saves new password
 	$('#password-button').click(function() {
@@ -247,7 +257,7 @@ $(document).ready(function() {
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                $('#uploaded-image')
+                $('#uploadedimage')
                     .attr('src', e.target.result)
                     .width(310)
                     .height(250);
@@ -259,9 +269,20 @@ $(document).ready(function() {
 
    	//Display photo on page
     $('#upload').change(function() {
-    	$('#uploaded-image').show();
+    	$('#uploadedimage').show();
     	displayImage(this);
     });
+
+    /*function uploadedPhoto(uploadedimage) {
+    	var postphoto = {
+    		uploadedimage: uploadedimage
+    	}
+
+    }
+
+    function addedImage(result) {
+    	alert("Uploaded image");
+    }*/
 
 
 	//Check for empty title and content in New Post

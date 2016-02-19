@@ -63,6 +63,7 @@ app.get('/search', search.view);
 app.get('/settings', settings.view);
 app.get('/userprofile', userprofile.view);
 app.post('/updatename', userprofile.updatename);
+app.post('/updatephoto', userprofile.updatephoto);
 app.post('/addprofile', signup.addprofile);
 app.get('/password', password.view);
 app.post('/changepassword', password.changepassword);

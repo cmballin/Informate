@@ -17,3 +17,11 @@ exports.updatename = function(req, res) {
 
 	res.json({success: success});
 }
+
+exports.updatephoto = function(req, res) {
+	var newPhoto = req.body.userphoto;
+	var userid = data.userlogedin[0].userid;
+
+	data.userlogin[0].userphoto = newPhoto;
+	data.profile[userid].userphoto = newPhoto;
+}
