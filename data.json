@@ -40,7 +40,8 @@
 
 	"profile": [
 		{
-
+			"name": "chris",
+			"learned": [[1,2], [2,4]]
 		}
 	]
 }
