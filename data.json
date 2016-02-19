@@ -41,7 +41,33 @@
 	"profile": [
 		{
 			"name": "chris",
-			"learned": [[1,2], [2,4]]
+			"datasets":[
+				[[1,7], [2,6], [3,4], [4,2]],
+				[[1,2], [2,4], [3,7], [4,12]]
+			],
+			"index": "0"
+		}
+	],
+	"suggestions":[
+		{
+			"label": "techExpert",
+			"suggestion":"It looks like you are becoming a bit of an expert in the field of technology. Maybe you should try to find some especially exclusive content to post. "
+		},
+		{
+			"label": "inactive",
+			"suggestion":"Your viewing history has declined. Maybe you could try searching for articles outside of your typical domain to re-engage that excitement. "
+		},
+		{
+			"label": "share",
+			"suggestion":"You might find it engaging to share some of your newfound knowledge with your friends. Maybe they could benefit from it as well."
+		},
+		{
+			"label": "youGoodPost",
+			"suggestion":"Your last post recieved a ton of views and not many people knew about your insight. Keep up the excellent work!"
+		},
+		{
+			"label": "otherGoodPost",
+			"suggestion":"There are a bunch of top trending articles that you have yet to view. Seems like someone found out something uniquely interesting."
 		}
 	]
 }

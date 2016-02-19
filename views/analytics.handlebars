@@ -18,11 +18,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
 		
 		<style>
-			#graph-quant {
-			    width: 300px;
-			    height: 350px;
-			}
-			#graph-what {
+			#placeholder {
 			    width: 300px;
 			    height: 350px;
 			}
@@ -32,11 +28,8 @@
 			}
 		</style>
 		<script type="text/javascript">
+			var currentPerson;
 		
-			
-			var data_quant = [[1, 300], [2, 600], [3, 550], [4, 400], [5, 300]];
-			var data_what = [[2, 20], [5, 60], [3, 50], [4, 40], [5, 30]];
-			var data_suggest = [[1, 300], [2, 600], [3, 550], [4, 400], [5, 300]];
 			
 		
 			var options = {
@@ -54,7 +47,7 @@
 				},
 		        
 		        xaxes: [{
-		            axisLabel: 'Time',
+		            axisLabel: 'Weeks',
 			        axisLabelFontSizePixels: 12,
 			        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
 			        axisLabelPadding: 5
@@ -62,7 +55,7 @@
 		        
 		        yaxes: [{
 		            position: 'left',
-		            axisLabel: '# learned',
+		            axisLabel: 'New   ideas   learned',
 		            axisLabelFontSizePixels: 12,
 			        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
 			        axisLabelPadding: 5
@@ -77,29 +70,54 @@
 			$(function () {
     
 			    $('#quant-learn').click(function(){
-				    $('#graph-what').hide();
+			    	plotDataSet(0);
+			    	
+				    $('#suggest-list').hide();
 				  
-				    $('#graph-quant').show();
+				    $('#placeholder').show();
 				   
-			    	$('#graph-title').text("Learn");
+			    	$('#graph-title').text("Unique ideas learned");
 			    });
 			    
 			     $('#what-learn').click(function(){
-				    $('#graph-quant').hide();
+			     	plotDataSet(1);
+				    
+				    $('#suggest-list').hide();
 				  
-				    $('#graph-what').show();
+				    $('#placeholder').show();
 				   
-			    	$('#graph-title').text("Categories");
+			    	$('#graph-title').text("Categories you learned");
+			    });
+			    
+			    $('#suggest-learn').click(function(){
+				    $('#placeholder').hide();
+				    
+				    $('#suggest-list').show();
+				   
+			    	$('#graph-title').text("Suggestions");
 			    });
 			
 			});
-				
+			
+
+			function getData(result) {
+				currentPerson = result;
+				plotDataSet(0);
+			
+			}	
+			function plotDataSet(index){
+				$.plot($("#placeholder"), [currentPerson.datasets[index]], options);
+			}
 			
 			
 			$(document).ready(function() {
-			    $.plot($("#graph-quant"), [data_quant], options);
-			    $.plot($("#graph-what"), [data_what], options);
-			    $('#graph-what').hide();
+				//this is the person call this will have to change
+				$.get("/getflotdata?index=0",getData);
+				$('#suggest-list').hide();
+		//      $.plot($("#graph-quant"), [data_quant], options);
+		//	    $.plot($("#graph-what"), [data_what], options);
+		//	    $('#suggest-list').hide();
+		//	    $('#graph-what').hide();
 			});
 		
 		</script>
@@ -132,23 +150,30 @@
 
 		<div>
 			<div class="container">
-				<h3 id="graph-title">Woah! Look at them awesome analytics!</h3>
+				<h3 id="graph-title">Unique ideas learned</h3>
 				<div>
-					<div id="graph-quant"></div>
-					<div id="graph-what"></div>
+					<div id="placeholder"></div>
+					<div id="suggest-list">
+						<ul>
+							{{#each suggestions}}
+							<li>{{suggestion}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					
 				</div>
 				<div class="row">
 					
 					<div class="col-md-4">
-						<button type="button" id="quant-learn" class="btn btn-primary btn-lg">How much have I learned?</button>
+						<button type="button" id="quant-learn" class="btn btn-primary btn-lg">How much you learned</button>
 					</div>
 					
 					<div class="col-md-4">
-						<button type="button" id="what-learn" class="btn btn-primary btn-lg">What have I learned about?</button>
+						<button type="button" id="what-learn" class="btn btn-primary btn-lg">How much your friends learned</button>
 					</div>
 					
 					<div class="col-md-4">
-						<button type="button" id="suggest" class="btn btn-primary btn-lg">Why do I care?</button>
+						<button type="button" id="suggest-learn" class="btn btn-primary btn-lg">Personalized suggestions</button>
 					</div>
 					
 				</div>
