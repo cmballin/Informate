@@ -26,9 +26,19 @@
 				width: 300px;
 			    height: 350px;
 			}
+			.button-bonus{
+			 	width: 100%
+			}
 		</style>
 		<script type="text/javascript">
 			var currentPerson;
+			var ticksQuant = [
+		   		[1, "Week 1"], [2, "Week 2"], [3, "Week 3"], [4, "Week 4"]
+			];
+			
+			var ticksWhat = [
+		   		[1, "Tech"], [2, "Home"], [3, "Nature"], [4, "Misc"]
+			];
 		
 			
 		
@@ -50,7 +60,9 @@
 		            axisLabel: 'Weeks',
 			        axisLabelFontSizePixels: 12,
 			        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-			        axisLabelPadding: 5
+			        axisLabelPadding: 5,
+			        ticks: ticksQuant,
+			        tickLength: 0
 		        }],
 		        
 		        yaxes: [{
@@ -59,10 +71,11 @@
 		            axisLabelFontSizePixels: 12,
 			        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
 			        axisLabelPadding: 5
-		        }, {
-		            position: 'right',
-		            axisLabel: 'bleem'
-		        }]
+		        }],
+		        
+		        grid: {
+			        borderWidth: 0
+			    }
 				
 			};
 			
@@ -70,9 +83,47 @@
 			$(function () {
     
 			    $('#quant-learn').click(function(){
+			    	
+			    	$('#suggest-list').hide();
+			    	
+			    	options = {
+						axesLabels: {
+		            		show: true
+				        },
+				        
+				        lines: {
+							show: true
+						},
+						
+						points: {
+							show: true
+						},
+				        
+				        xaxes: [{
+				            axisLabel: 'Weeks',
+					        axisLabelFontSizePixels: 12,
+					        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+					        axisLabelPadding: 5,
+					        ticks: ticksQuant,
+					        tickLength: 0
+				        }],
+				        
+				        yaxes: [{
+				            position: 'left',
+				            axisLabel: 'New   ideas   learned',
+				            axisLabelFontSizePixels: 12,
+					        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+					        axisLabelPadding: 5
+				        }],
+				        
+				        grid: {
+					        borderWidth: 0
+					    }
+						
+					};
+					
 			    	plotDataSet(0);
 			    	
-				    $('#suggest-list').hide();
 				  
 				    $('#placeholder').show();
 				   
@@ -80,9 +131,47 @@
 			    });
 			    
 			     $('#what-learn').click(function(){
-			     	plotDataSet(1);
+			     	
+			     	$('#suggest-list').hide();
+			     	
+			     	options = {
+				
+						axesLabels: {
+		            		show: true
+				        },
+				        
+				        bars: {
+							show: true,
+							align: "center",
+    						barWidth: 0.75
+						},
+						
+				        
+				        xaxes: [{
+				            axisLabel: 'Categories',
+					        axisLabelFontSizePixels: 12,
+					        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+					        axisLabelPadding: 5,
+					        ticks: ticksWhat,
+					        tickLength: 0
+				        }],
+				        
+				        yaxes: [{
+				            position: 'left',
+				            axisLabel: 'number of ideas learned',
+				            axisLabelFontSizePixels: 12,
+					        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+					        axisLabelPadding: 5
+				        }],
+				        
+				        grid: {
+					        borderWidth: 0
+					    }
+						
+					};
 				    
-				    $('#suggest-list').hide();
+				    plotDataSet(1);
+				    
 				  
 				    $('#placeholder').show();
 				   
@@ -165,15 +254,15 @@
 				<div class="row">
 					
 					<div class="col-md-4">
-						<button type="button" id="quant-learn" class="btn btn-primary btn-lg">How much you learned</button>
+						<button type="button" id="quant-learn" class="btn btn-primary btn-lg button-bonus">How much you learned</button>
 					</div>
 					
 					<div class="col-md-4">
-						<button type="button" id="what-learn" class="btn btn-primary btn-lg">How much your friends learned</button>
+						<button type="button" id="what-learn" class="btn btn-primary btn-lg button-bonus">What you learned about</button>
 					</div>
 					
 					<div class="col-md-4">
-						<button type="button" id="suggest-learn" class="btn btn-primary btn-lg">Personalized suggestions</button>
+						<button type="button" id="suggest-learn" class="btn btn-primary btn-lg button-bonus">Personalized suggestions</button>
 					</div>
 					
 				</div>
