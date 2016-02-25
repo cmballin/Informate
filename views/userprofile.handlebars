@@ -59,23 +59,37 @@
 						<td width="90%" style="padding-left: 30px;">
 							{{#each userlogedin}}
 							<input type="text" placeholder="{{username}}" class="userprofilename" id="name" name="username"></input>
-							<!--<input type="text" placeholder="{{lastname}}" class="userprofilename" name="lastname"></input>
-							{{/each}}-->
+							{{/each}}
 						</td>
 					</tr>
-	
-					<!--<tr>
+
+					<tr>
 						<td width="10%">
-							<p style="font-size: 16px;">Likes</p>
+							<p style="font-size: 16px;">Firstname</p>
 						</td>
 
+						<hr>
 
 						<td width="90%" style="padding-left: 30px;">
-							{{#each profile}}
-							<input type="text" placeholder="{{about}}" id="about"></input>
+							{{#each userlogedin}}
+							<input type="text" placeholder="{{firstname}}" class="userprofilename" id="firstname" name="firstname"></input>
 							{{/each}}
-						</td>	
-					</tr>-->
+						</td>
+					</tr>
+
+					<tr>
+						<td width="10%">
+							<p style="font-size: 16px;">Lastname</p>
+						</td>
+
+						<hr>
+
+						<td width="90%" style="padding-left: 30px;">
+							{{#each userlogedin}}
+							<input type="text" placeholder="{{lastname}}" class="userprofilename" id="lastname" name="lastname"></input>
+							{{/each}}
+						</td>
+					</tr>
 				</table>
 			</div>
 		</div>
@@ -84,7 +98,8 @@
 			<h4 class="green" style="height: 40px; text-align:center" id="profile-updated">User profile updated</h4>
 		</div>
 
-		<a href="#" class="post" role="button" id="edit-button">Edit</a>
+		<button type="button" class="btn btn-primary" id="profile-button">Save</button>
+		<!--<a href="#" class="post" role="button" id="edit-button">Edit</a>-->
 
 	</body>
 </html>

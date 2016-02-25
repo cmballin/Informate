@@ -17,7 +17,7 @@ $(document).ready(function() {
 	$('#uploadedimage').hide();
 
 	//User can't edit name unless they click "Edit" button
-	$('#name').prop('disabled', true);
+	/*$('#name').prop('disabled', true);*/
 
 	//Take user to user profile link
 	$('#user-profile').click(function() {
@@ -32,7 +32,7 @@ $(document).ready(function() {
 /********************************************************************
                          Change password
 ********************************************************************/
-	$('#edit-button').click(function() {
+	/*$('#edit-button').click(function() {
 		var text = $('#edit-button').text();
 		var username = $('#name').val();
 		//var userphoto = $('#userphoto').val(); WILL WORK ON LATER
@@ -53,7 +53,7 @@ $(document).ready(function() {
 			newName(username);
 			//changePhoto() WILL WORK ON LATER!
 		}
-	});
+	});*/
 
 	//Change new photo and update to database
 	function changePhoto(userphoto) {
@@ -77,6 +77,17 @@ $(document).ready(function() {
 		//Show update success message
 		$('#profile-updated').show();
 	}
+
+	$('#profile-button').click(function(e) {
+		if ($('#name').val() == '') {
+			e.preventDefault();
+		}
+
+		else {
+			var username = $('#name').val();
+			newName(username);
+		}
+	});
 
 	//Save button should prop up a confirmation when user saves new password
 	$('#password-button').click(function() {

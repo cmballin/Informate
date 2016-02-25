@@ -329,7 +329,6 @@ h1, h2, h3, h4, h5, p, td, li {
 	margin: 0 auto;
 }
 
-
 /* Needs to be fixed for length of line */
 
 #name {
@@ -389,6 +388,10 @@ h1, h2, h3, h4, h5, p, td, li {
 	outline: none;
 	background-color: transparent;
 	border-bottom: 1px solid #a9a9a9;
+	width: 100%;
+}
+
+#profile-button {
 	width: 100%;
 }
 
