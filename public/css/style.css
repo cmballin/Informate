@@ -485,7 +485,10 @@ h1, h2, h3, h4, h5, p, td, li {
 .carousel-inner p {
 	text-align: center;
 }
-
+.carousel-indicators li{display:none;}
+.suggestcolor{
+	color: white;
+}
 
 
 

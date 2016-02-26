@@ -10,17 +10,18 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.js"></script>
 		<script src="js/jquery.flot.axislabels.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
 		<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
 		
 		<style>
-			#placeholder {
-			    width: 300px;
-			    height: 350px;
+			#piechart {
+			    width: 600px;
+			    height: 250px;
 			}
 			#graph-container{
 				width: 300px;
@@ -31,7 +32,31 @@
 			}
 		</style>
 		<script type="text/javascript">
+		
+			google.charts.load('current', {'packages':['corechart']});
+			google.charts.setOnLoadCallback(drawChart);
+		    function drawChart() {
+
+		      var data = google.visualization.arrayToDataTable([
+		        ['Task', 'Hours per Day'],
+		        ['Tech',     10],
+		        ['Lifestyle',      20],
+		        ['Nature',  3],
+		        ['Misc', 7]
+		      ]);
+		
+		      var options = {
+		      	legend: 'bottom',
+		      	chartArea: {left: '4%' ,top:0,width:'50%',height:'75%'}
+		      };
+		
+		      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+		
+		      chart.draw(data, options);
+		      
+		    }
 			var currentPerson;
+			
 			var ticksQuant = [
 		   		[1, "Week 1"], [2, "Week 2"], [3, "Week 3"], [4, "Week 4"]
 			];
@@ -39,45 +64,7 @@
 			var ticksWhat = [
 		   		[1, "Tech"], [2, "Home"], [3, "Nature"], [4, "Misc"]
 			];
-		
-			
-		
-			var options = {
-				
-				axesLabels: {
-            		show: true
-		        },
-		        
-		        lines: {
-					show: true
-				},
-				
-				points: {
-					show: true
-				},
-		        
-		        xaxes: [{
-		            axisLabel: 'Weeks',
-			        axisLabelFontSizePixels: 12,
-			        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-			        axisLabelPadding: 5,
-			        ticks: ticksQuant,
-			        tickLength: 0
-		        }],
-		        
-		        yaxes: [{
-		            position: 'left',
-		            axisLabel: 'New   ideas   learned',
-		            axisLabelFontSizePixels: 12,
-			        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-			        axisLabelPadding: 5
-		        }],
-		        
-		        grid: {
-			        borderWidth: 0
-			    }
-				
-			};
+	
 			
 		
 			$(function () {
@@ -86,46 +73,9 @@
 			    	
 			    	$('#suggest-list').hide();
 			    	
-			    	options = {
-						axesLabels: {
-		            		show: true
-				        },
-				        
-				        lines: {
-							show: true
-						},
-						
-						points: {
-							show: true
-						},
-				        
-				        xaxes: [{
-				            axisLabel: 'Weeks',
-					        axisLabelFontSizePixels: 12,
-					        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-					        axisLabelPadding: 5,
-					        ticks: ticksQuant,
-					        tickLength: 0
-				        }],
-				        
-				        yaxes: [{
-				            position: 'left',
-				            axisLabel: 'New   ideas   learned',
-				            axisLabelFontSizePixels: 12,
-					        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-					        axisLabelPadding: 5
-				        }],
-				        
-				        grid: {
-					        borderWidth: 0
-					    }
-						
-					};
-					
 			    	plotDataSet(0);
-			    	
 				  
-				    $('#placeholder').show();
+				    $('#piechart').show();
 				   
 			    	$('#graph-title').text("Unique ideas learned");
 			    });
@@ -134,52 +84,17 @@
 			     	
 			     	$('#suggest-list').hide();
 			     	
-			     	options = {
-				
-						axesLabels: {
-		            		show: true
-				        },
-				        
-				        bars: {
-							show: true,
-							align: "center",
-    						barWidth: 0.75
-						},
-						
-				        
-				        xaxes: [{
-				            axisLabel: 'Categories',
-					        axisLabelFontSizePixels: 12,
-					        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-					        axisLabelPadding: 5,
-					        ticks: ticksWhat,
-					        tickLength: 0
-				        }],
-				        
-				        yaxes: [{
-				            position: 'left',
-				            axisLabel: 'number of ideas learned',
-				            axisLabelFontSizePixels: 12,
-					        axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-					        axisLabelPadding: 5
-				        }],
-				        
-				        grid: {
-					        borderWidth: 0
-					    }
-						
-					};
 				    
 				    plotDataSet(1);
 				    
 				  
-				    $('#placeholder').show();
+				    $('#piechart').show();
 				   
 			    	$('#graph-title').text("Categories you learned");
 			    });
 			    
 			    $('#suggest-learn').click(function(){
-				    $('#placeholder').hide();
+				    $('#piechart').hide();
 				    
 				    $('#suggest-list').show();
 				   
@@ -195,7 +110,7 @@
 			
 			}	
 			function plotDataSet(index){
-				$.plot($("#placeholder"), [currentPerson.datasets[index]], options);
+			
 			}
 			
 			
@@ -251,9 +166,7 @@
 		</div>
 
 		<div class="chart">
-			<div class="container">
-				<p>Pie chart goes here</p>
-			</div>
+			<div id="piechart"></div>
 		</div>
 
 		<a href="/analytics" class="btn btn-info btn-xlg" id="knew-button">Check out what I knew most</a>
@@ -267,21 +180,14 @@
 			</ol>
 
 			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<p>You know a lot about technology, but what do you know about lifestyle?</p>
+				<div class="item active suggestcolor">
+					<p>Suggestions</p>
 				</div>
-
-				<div class="item">
-					<p>Maybe look more into other stuff too</p>
-				</div>
-
-				<div class="item">
-					<p>You know too much</p>
-				</div>
-
-				<div class="item">
-					<p>You know too little</p>
-				</div>
+					{{#each suggestions}}
+						<div class="item suggestcolor">
+							<p>{{suggestion}}</p>
+						</div>
+					{{/each}}
 			</div>
 
 			<!--<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
