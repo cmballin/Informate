@@ -476,14 +476,10 @@ h1, h2, h3, h4, h5, p, td, li {
 }
 
 #myCarousel {
-	height: 86px;
+	height: 87px;
 	padding-top: 20px;
 	margin-top: 25px;
-	z-index: -1;
-}
-
-.carousel-indicators {
-	padding-top: 150px;
+	background-color: gray;
 }
 
 .carousel-inner p {
